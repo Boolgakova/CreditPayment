@@ -6,7 +6,7 @@ public class CreditPaymentService {
         double denominator; //знаменатель в формуле рассчета ежемесячного платежа
         termInMonths = term * 12;
         monthlyRate = percent / (100 * 12);
-        denominator = 1 - Math.pow((1 + monthlyRate), (termInMonths - (termInMonths * 2)));
+        denominator = 1 - Math.pow((1 + monthlyRate), -termInMonths);
         monthlyPayment = amount * (monthlyRate / denominator);
         return monthlyPayment;
 
